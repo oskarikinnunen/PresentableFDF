@@ -2,8 +2,9 @@
 Presentable version of my FDF project.
 
 My implementation of the "FDF" project. Simple 3D elevation map renderer written in pure C.
+
 Simple explanation of the project limitations for those "not in the know":
-We can only use some permitted functions from the standard c-libraries, in this case:
+We can only use some permitted functions from the standard C-libraries, in this case:
   - open, read, write, close
   - malloc, free
   - exit
