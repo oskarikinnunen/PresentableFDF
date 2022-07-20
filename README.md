@@ -12,6 +12,11 @@ We can only use some permitted functions from the standard C-libraries, in this 
   - Functions defined in the **mlx.h** header. MLX is a very simple graphics library which only permits drawing images "one pixel at a time".
     This means we had to implement our own DDA or Bresenham algorithm for drawing lines. (And much more of course)
 
+Simplified program flow: 
+  Parse the file that was passed as an argument to the program. This is represented as a "triangle map" (t_tri_map) in the rest of the program.
+  https://github.com/oskarikinnunen/FDF/blob/40a43afc0c2a18ac487dc9a53453c33a48da1dd9/include/fdf.h?plain=1#L72-L78
+
+
 Bonus features:
 - Multithreading (pthread.h)
 - Animation (time.h)
