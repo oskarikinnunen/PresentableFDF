@@ -7,9 +7,9 @@ We can only use some permitted functions from the standard c-libraries, in this 
   - open, read, write, close
   - malloc, free
   - exit
-  - all of the math.h functions
-  - all of the functions in our simple "mlx" graphics library. MLX is a very simple graphics library which only permits drawing images "one pixel at a time".
-  This means we had to implement our own DDA or Bresenham algorithm for drawing lines.
+  - Functions defined in the **math.h** header
+  - Functions defined in the **mlx.h** header. MLX is a very simple graphics library which only permits drawing images "one pixel at a time".
+    This means we had to implement our own DDA or Bresenham algorithm for drawing lines.
 
 Bonus features:
 - Multithreading (pthread.h)
