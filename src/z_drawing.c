@@ -32,20 +32,17 @@ void	z_fill_sub_tri(int *tris[3], t_image_info img)
 
 void	z_fill_tri(int tris[3][3], t_image_info img)
 {
-	int		split[3];
-	int		sorted[3][3];
+	int	split[3]; 	//Vector that's used to form the subtriangles.
+	int	sorted[3][3];	//Stack memory for the sorted triangles
 	float	lerp;
 
 	sort_tris(ft_memcpy(sorted, tris, sizeof(int [3][3])));
-	lerp = (float)(sorted[1][Y] - sorted[2][Y])
-		/ (float)(sorted[0][Y] - sorted[2][Y]);
+	lerp = (float)(sorted[1][Y] - sorted[2][Y]) / (float)(sorted[0][Y] - sorted[2][Y]);
 	split[X] = sorted[2][X] + (lerp * (sorted[0][X] - sorted[2][X]));
 	split[Y] = sorted[1][Y];
 	split[Z] = sorted[1][Z];
-	z_fill_sub_tri((int *[3]){(int *)&(sorted[0]),
-		(int *)&(sorted[1]), (int *)&split}, img);
-	z_fill_sub_tri((int *[3]){(int *)&(sorted[2]),
-		(int *)&(sorted[1]), (int *)&split}, img);
+	z_fill_sub_tri((int *[3]){(int *)&(sorted[0]), (int *)&(sorted[1]), (int *)&split}, img);
+	z_fill_sub_tri((int *[3]){(int *)&(sorted[2]), (int *)&(sorted[1]), (int *)&split}, img);
 	z_draw_line(sorted[0], sorted[2], img);
 }
 
