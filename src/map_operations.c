@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_operations.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okinnune <okinnune@student.42.fr>          +#+  +:+       +#+        */
+/*   By: okinnune <eino.oskari.kinnunen@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 04:36:32 by okinnune          #+#    #+#             */
-/*   Updated: 2022/04/19 17:42:26 by okinnune         ###   ########.fr       */
+/*   Updated: 2022/07/20 10:06:57 by okinnune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,12 @@ static void	fit_to_screen(t_tri_map map)
 
 void	preprocess_map(t_tri_map map, t_mlx_i i)
 {
-	scale_with_size_matrix(map, i.z_scale);
-	ft_bzero(i.img->depthlayer, map.tri_count * sizeof(int));
-	save_face_colors(map, *i.img);
+	scale_with_size_matrix(map, i.z_scale); //Scale the triangles to fit inside the screen.
+	ft_bzero(i.img->depthlayer, map.tri_count * sizeof(int)); //Empty the z-buffer
+	save_face_colors(map, *i.img); 			//Calculate face colors according to their original non-transformed height.
 	add_tri_map(map, (float [3]){-WSZ / 2, -WSZ / 2, 0});
-	scale_with_x_matrix(map, i.x_angle);
-	scale_with_y_matrix(map, i.y_angle);
-	save_depths(map, *i.img);
+	scale_with_x_matrix(map, i.x_angle); //Apply the matrix transformation for X-axis
+	scale_with_y_matrix(map, i.y_angle); //Apply the matrix transformation for Y-axis
+	save_depths(map, *i.img); //Now that we have transformed the points we can save the depths to the z-buffer
 	fit_to_screen(map);
 }
