@@ -14,10 +14,13 @@ We can only use some permitted functions from the standard C-libraries, in this 
 
 Simplified program flow:
 
-  -Parse the file that was passed as an argument to the program. This is represented as a "triangle map" (t_tri_map) in the rest of the program.
+  - Parse the file that was passed as an argument to the program. This is represented as a "triangle map" (t_tri_map) in the rest of the program.
   https://github.com/oskarikinnunen/PresentableFDF/blob/b6cfa9066d24f16314af8d93e0ba95db707a93e7/include/fdf.h#L72-L79
-  -Make a copy of the original untransformed triangle map, apply some rotation matrices to it and save the z-buffer.
-  
+  - Make a copy of the original untransformed triangle map, apply some rotation matrices to it and save the z-buffer.
+  https://github.com/oskarikinnunen/PresentableFDF/blob/59577c687b6b8890072dff99fa5af46af0a475db/src/map_operations.c#L80-L90
+  - Split each triangle into two flat-sided subtriangles (flat bottomed triange and a flat topped triangle)
+  ![bresen](https://user-images.githubusercontent.com/45420297/179927757-46084e1c-e6ed-4fc8-bc58-abbc53ef959f.png)
+
 
 
 Bonus features:
