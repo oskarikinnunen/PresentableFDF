@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okinnune <okinnune@student.42.fr>          +#+  +:+       +#+        */
+/*   By: okinnune <eino.oskari.kinnunen@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 18:34:33 by okinnune          #+#    #+#             */
-/*   Updated: 2022/04/21 12:45:28 by okinnune         ###   ########.fr       */
+/*   Updated: 2022/07/20 09:41:42 by okinnune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ typedef struct s_map
 	int		width;
 }	t_map;
 
+/* Explanation of the derefencing of the tri_list.
+				 tri_list[0] 		<- 									 first triangle in the list.
+				 tri_list[0][0]		<- 				  first point of the first triangle in the list
+				 tri_list[0][0][X] 	<- X value of the first point of the first triangle in the list
+				 	 			^ X is a #define for 0
+*/
 typedef struct s_tri_map
 {
 	float	***tri_list;
