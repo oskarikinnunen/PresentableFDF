@@ -70,9 +70,9 @@ typedef struct s_map
 }	t_map;
 
 /* Explanation of the derefencing of the tri_list.
-				 tri_list[0] 		<- 		                     first triangle in the list.
-				 tri_list[0][0]		<- 	          first point of the first triangle in the list
-				 tri_list[0][0][X] 	<- X value of the first point of the first triangle in the list
+	tri_list[0] 	  <-				       first triangle in the list.
+	tri_list[0][0]	  <- 		    first point of the first triangle in the list
+	tri_list[0][0][X] <- X value of the first point of the first triangle in the list
 				 		^ X is a #define for 0 						      */
 typedef struct s_tri_map
 {
