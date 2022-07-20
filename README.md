@@ -14,7 +14,7 @@ We can only use some permitted functions from the standard C-libraries, in this 
 
 Simplified program flow: 
   Parse the file that was passed as an argument to the program. This is represented as a "triangle map" (t_tri_map) in the rest of the program.
-  https://github.com/oskarikinnunen/PresentableFDF/blob/master/include/fdf.h#L72-L79
+  https://github.com/oskarikinnunen/PresentableFDF/blob/b6cfa9066d24f16314af8d93e0ba95db707a93e7/include/fdf.h#L72-L79
 
 
 Bonus features:
