@@ -1,4 +1,4 @@
-# PresentableFDF
+# FDF
 
 My implementation of the "FDF" project. Simple 3D elevation map renderer written in pure C.
 
