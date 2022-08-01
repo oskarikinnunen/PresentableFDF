@@ -28,6 +28,7 @@ Brief overview of the program:
 
 
 Bonus features:
+- Z-buffer implementation
 - Multithreading (pthread.h)
 - Animation (time.h)
 - Compiles for multiple platforms (Linux, OS X)
